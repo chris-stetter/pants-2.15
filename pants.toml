@@ -1,0 +1,22 @@
+[GLOBAL]
+pants_version = "2.15.0rc0"
+
+backend_packages = [
+  'pants.backend.python',
+  'pants.backend.docker',
+]
+
+[source]
+root_patterns = ["/"]
+
+[python]
+interpreter_constraints = ["CPython==3.8.*"]
+enable_resolves = true
+resolves = { python-default = "python-default.lock"}
+
+
+[pytest]
+version = "pytest==7.0.1"
+
+[environments-preview.names]
+linux_docker = "//:docker_python"
